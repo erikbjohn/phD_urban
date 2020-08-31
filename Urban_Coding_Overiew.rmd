@@ -1,0 +1,26 @@
+---
+title: "Urban Coding Overview"
+author: "Erik Johnson"
+date: "8/31/2020"
+output: beamer_presentation
+---
+
+```{r setup, include=FALSE}
+library(data.table)
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Overview
+
+1. Data Loading Example
+2. Necessary Packages
+
+## Data Loading Example
+
+Here is a picture of Denver's establishments in 2011.
+
+```{r plot_estabs}
+dt <- data.table::fread('Data/dataset1.csv')
+plot(dt$Long, dt$Lat)
+```
+

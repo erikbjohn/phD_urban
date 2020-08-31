@@ -1,0 +1,79 @@
+---
+title: "Urban Economics Coding Overview"
+author: "Erik Johnson"
+date: "8/31/2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Required Software
+
+1. R: https://www.r-project.org/
+2. R Studio: https://rstudio.com/
+3. LaTex: 
+    a. Windows: https://miktex.org/
+    b. Mac: http://www.tug.org/mactex/
+    c. Linux: https://www.tug.org/texlive/
+
+
+# R packages
+1. data.table
+2. ggplot2
+3. lubridate
+4. stringr
+5. stargazer
+
+```{r, echo=TRUE, eval=FALSE}
+# Install the packages (only need to do this once)
+install.packages('data.table')
+install.packages('ggplot2')
+install.packages('lubridate')
+install.packages('stringr')
+install.packages('stargazer')
+```
+
+```{r, echo=TRUE, eval=TRUE}
+# Load the packages into the current workspace
+library(data.table)
+# library(ggplot2)
+suppressMessages(library(lubridate))
+library(stringr)
+suppressMessages(library(stargazer))
+```
+
+# Import some data
+
+```{r, echo=TRUE, eval=TRUE}
+dt <- data.table::fread('Data/dataset1.csv')
+```
+
+\clearpage
+
+# Describe Data
+
+```{r stargazer_example, results='asis'}
+stargazer::stargazer(dt, header=FALSE,
+                     title = "Descriptive Statistics for Denver Estabs",
+                     label = 'descriptiveStats')
+```
+
+
+Look at Table \ref{descriptiveStats}.
+
+\section{Reference Data}
+
+```{r referenceData}
+mean_lat <- mean(dt$Lat)
+mean_lon <- mean(dt$Long)
+
+mh_capacity <- 65000
+```
+
+The mean latitude of establishments in Denver is `r round(mean_lat, 3)`.
+
+The capacity of Mile High Stadium was `r prettyNum(mh_capacity, big.mark=',')`.
+
+

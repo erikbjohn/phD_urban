@@ -1,0 +1,41 @@
+---
+title: "Cholera and Disease"
+author: "Erik Johnson"
+date: "8/31/2020"
+output:
+  beamer_presentation:
+      keep_tex: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## R Markdown
+
+This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
+
+## Slide with Bullets
+
+- Bullet 1
+- Bullet 2
+- Bullet 3
+
+## Catchment Areas
+
+![Catchement Area for the Well](cathmentAreas.jpg)
+
+## Here is a table
+
+Thing Number | Thing | Importance 
+----|-----|---------
+1 | Image Stuff | High
+2 | Outlines | Medium
+
+## math
+\begin{equation}
+\sum_{i=1}^{10} \frac{x_i}{N}
+\end{equation}
+
